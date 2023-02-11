@@ -6,6 +6,7 @@ namespace kang\klimit\command;
 
 use pocketmine\command\Command;
 use kang\klimit\form\ListForm;
+use kang\klimit\KLimit;
 use pocketmine\command\CommandSender;
 
 class MainCommand extends Command{

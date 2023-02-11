@@ -39,6 +39,7 @@ class KLimit extends PluginBase implements Listener{
 				
 				$lore = $item->getLore();
 				$lore[count($lore)] = "§a( §f기간제: §e".date("Y-m-d h:i:s", $time)." §f까지 )";
+				$item->setLore($lore);
 				
 				$player->getInventory()->setItemInHand($item);
 				$player->sendMessage("해당 기간제 아이템이 사용되었습니다.");
