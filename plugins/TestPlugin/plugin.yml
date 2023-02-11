@@ -1,4 +1,0 @@
-name: TestPlugin
-main: testplugin\TestPlugin
-version: 1.0.0
-api: 4.0.0
