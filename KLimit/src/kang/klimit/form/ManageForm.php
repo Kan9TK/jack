@@ -7,6 +7,7 @@ namespace kang\klimit\form;
 use pocketmine\form\Form;
 use kang\klimit\KLimit;
 use pocketmine\item\Item;
+use pocketmine\Player;
 
 class ManageForm implements Form{
 	

@@ -10,6 +10,7 @@ use pocketmine\event\Listener;
 use pocketmine\nbt\tag\StringTag;
 use pocketmine\nbt\tag\IntTag;
 use pocketmine\utils\Config;
+use pocketmine\event\player\PlayerItemHeldEvent;
 
 class KLimit extends PluginBase implements Listener{
 	
@@ -33,6 +34,14 @@ class KLimit extends PluginBase implements Listener{
 			if( ! $item->getNamedTag()->getTag('used') instanceof StringTag){
 				$item->getNamedTag()->setString('used', '');
 				$item->getNamedTag()->setInt('limit', time() + $item->getNamedTag()->getTag('limit')->getValue());
+				
+				$time = time() + $item->getNamedTag()->getTag('limit')->getValue();
+				
+				$lore = $item->getLore();
+				$lore[count($lore)] = "§a( §f기간제: §e".date("Y-m-d h:i:s", $time)." §f까지 )";
+				
+				$player->getInventory()->setItemInHand($item);
+				$player->sendMessage("해당 기간제 아이템이 사용되었습니다.");
 				return;
 			}
 		}
@@ -41,7 +50,7 @@ class KLimit extends PluginBase implements Listener{
 		
 	}
 	
-	public function checkTime($item) : bool{
+	public function checkTime($item) : void{
 		if($item->getNamedTag()->getTag('limit') instanceof IntTag){
 			
 			if($item->getNamedTag()->getTag('used') instanceof StringTag){

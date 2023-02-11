@@ -6,6 +6,7 @@ namespace kang\klimit\form;
 
 use pocketmine\form\Form;
 use kang\klimit\KLimit;
+use pocketmine\Player;
 
 class ListForm implements Form{
 	
