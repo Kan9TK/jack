@@ -4,6 +4,7 @@ declare(strict_types=1);
 	
 namespace kang\klimit;
 
+use kang\klimit\command\MainCommand;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\nbt\tag\StringTag;
