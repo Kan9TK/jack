@@ -18,8 +18,9 @@ class ListForm implements Form{
 		foreach ( $this->plugin->data as $name => $data ){
 			$d = $data["d"];
 			$h = $data["h"];
+			$m = $data["m"];
 			$s = $data["s"];
-			$buttons[] = ["text"=>$name."\n".$d."일 ".$h."시간 ".$s."초"];
+			$buttons[] = ["text"=>$name."\n".$d."일 ".$h."시간 ".$m."분 ".$s."초"];
 		}
 		
 		return [
@@ -37,6 +38,7 @@ class ListForm implements Form{
 			$buttons[] = $name;
 		}
 		$button = $buttons[$data];
+		$player->sendForm(new ManageForm($this->plugin, $button));
 	}
 	
 }
