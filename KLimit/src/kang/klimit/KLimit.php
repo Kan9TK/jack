@@ -5,11 +5,15 @@ declare(strict_types=1);
 namespace kang\klimit;
 
 use pocketmine\plugin\PluginBase;
-use pocketmine\event\EventListener;
+use pocketmine\event\Listener;
 use pocketmine\nbt\tag\StringTag;
 use pocketmine\nbt\tag\IntTag;
+use pocketmine\utils\Config;
 
 class KLimit extends PluginBase implements Listener{
+	
+	public Config $a;
+	public array $data;
 	
 	public function onEnable(): void{
 		$this->getServer()->getCommandMap()->registerAll($this->getName(), [
