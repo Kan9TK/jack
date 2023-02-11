@@ -1,0 +1,5 @@
+name: Fishing
+main: kang\fishing\Fishing
+version: 1.0.0
+author: kang
+api: 4.0.0

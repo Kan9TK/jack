@@ -1,0 +1,9 @@
+name: PlayingTime
+main: ne0sw0rld\PlayingTime
+version: 1.0.0
+author: Ne0sW0rld
+api: 4.0.0
+
+permissions:
+  playingtime.command.true:
+    default: true

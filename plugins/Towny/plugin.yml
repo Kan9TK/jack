@@ -1,0 +1,4 @@
+name: Towny
+main: kang\towny\Towny
+version: 1.0.0
+api: 4.0.0
